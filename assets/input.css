@@ -1,0 +1,144 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap');
+
+
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+    font-family: 'Quicksand', sans-serif;
+}
+
+.fix::after{
+  content: '';
+  background-color:#2c98f0;
+  height:2px;
+  width:60px;
+  position: absolute;
+  bottom:3px;
+  margin: auto;
+  border-radius: 2px;
+  left:80px;
+  transition:all ease 0.5s;
+  display: block;
+}
+.navbar ul li a::after{
+   content: '';
+   /* background-color:#2c98f0;   */
+   background-color: transparent;
+   height:2px;
+   width:0px;
+   position: absolute;
+   bottom:3px;
+   margin: auto;
+   border-radius: 2px;
+   left:80px;
+   transition:all ease 0.5s;
+   display: block;
+}
+.navbar ul li a:hover:after{
+   width:60px;
+   background-color:#2c98f0;
+}
+.hovering:hover:after{
+  width:100px;
+}
+
+.hovering::after{
+  content: '';
+  background-color:#2c98f0;  
+  height:2px;
+  width:0px;
+  position: absolute;
+  bottom:3px;
+  margin: auto;
+  border-radius: 2px;
+  left:60px;
+  transition:0.5s;
+  display: block;
+}
+
+/* smoth */
+.smooth a{
+   transition: all ease 0.5s;
+}
+
+/* eduacation */
+.head{
+   font-size: large;
+   font-weight: bold;
+   padding: 15px 30px;
+   cursor: pointer;
+   color: rgb(122, 118, 118);
+   margin:10px;
+   text-transform: uppercase;
+}
+
+.content{
+   padding:0 20px;
+   overflow: hidden;
+   max-height:0;
+   transition: 0.5s;
+   color: hwb(0 29% 71%);
+}
+input[type="radio"]:checked + .content{
+    max-height:400px;
+    /* padding: 30px; */
+    
+}
+.batch{
+    @apply uppercase text-white text-xs mx-2 p-1 rounded  select-none  ;
+}
+
+
+@media screen and (max-width:1200px){
+  .side_nevbar{
+     position: fixed;
+     top:0;
+     left:0;
+     width:300px;
+     height:800px !important;
+     transform: translateX(-300px);
+     
+  }
+  .opens .side_nevbar{
+    transform: translateX(0px);
+    box-shadow: 0 0 15px rgba(0,0, 0,0.2);
+  }
+  .navoverlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width:100vw;
+    height:100vh; 
+    /* background-color: hsl(0, 5%, 76%);  */
+    /* backdrop-filter: blur(2px);  */
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s; 
+ }
+ .opens .navoverlay{
+   visibility:visible;
+   opacity:1;
+ }
+ .hero{
+    height:auto;
+    overflow: hidden;
+ }
+ #btnNav{
+    color:#000;
+ }
+}
+
+
+
+
+
+
+
+
+
+
