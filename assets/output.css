@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;1,400&display=swap');
 
 /*
-! tailwindcss v3.3.3 | MIT License | https://tailwindcss.com
+! tailwindcss v3.3.6 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -125,8 +125,10 @@ strong {
 }
 
 /*
-1. Use the user's configured `mono` font family by default.
-2. Correct the odd `em` font sizing in all browsers.
+1. Use the user's configured `mono` font-family by default.
+2. Use the user's configured `mono` font-feature-settings by default.
+3. Use the user's configured `mono` font-variation-settings by default.
+4. Correct the odd `em` font sizing in all browsers.
 */
 
 code,
@@ -135,8 +137,12 @@ samp,
 pre {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   /* 1 */
-  font-size: 1em;
+  font-feature-settings: normal;
   /* 2 */
+  font-variation-settings: normal;
+  /* 3 */
+  font-size: 1em;
+  /* 4 */
 }
 
 /*
@@ -640,51 +646,26 @@ input[type="radio"]:checked + .content{
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.side_nevbar{
+  position: fixed;
+  top:0;
+  left:0;
+  width:300px;
+  height:800px !important;
+  transform: translateX(-300px);
+}
+
 @media screen and (max-width:1200px){
-  .side_nevbar{
-    position: fixed;
-    top:0;
-    left:0;
-    width:300px;
-    height:800px !important;
-    transform: translateX(-300px);
-  }
-
-  .opens .side_nevbar{
-    transform: translateX(0px);
-    box-shadow: 0 0 15px rgba(0,0, 0,0.2);
-  }
-
-  .navoverlay{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width:100vw;
-    height:100vh;
-    /* background-color: hsl(0, 5%, 76%);  */
-    /* backdrop-filter: blur(2px);  */
-    visibility: hidden;
-    opacity: 0;
-    transition: 0.3s;
-  }
-
-  .opens .navoverlay{
-    visibility:visible;
-    opacity:1;
-  }
-
-  .hero{
-    height:auto;
-    overflow: hidden;
-  }
-
-  #btnNav{
-    color:#000;
+  .point{
+    max-width:320px;
   }
 }
 
-
-
+@media screen and (min-width:1320px){
+  #btnNav{
+    color: #fff;
+  }
+} 
 
 
 
